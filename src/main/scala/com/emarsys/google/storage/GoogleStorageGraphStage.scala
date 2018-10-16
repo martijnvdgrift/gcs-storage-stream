@@ -34,12 +34,12 @@ class GoogleStorageGraphStage(storageChannel: ReadChannel, chunkKByteSize : Int 
 
       override def onPull(): Unit = {
           if (storageChannel.read(bytes) > 0) {
-            bytes.flip();
+            bytes.flip()
             push(out, ByteString(bytes))
           } else {
             completeStage()
           }
-        bytes.clear();
+        bytes.clear()
       }
     })
   }

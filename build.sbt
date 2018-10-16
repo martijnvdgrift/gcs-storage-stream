@@ -1,8 +1,8 @@
 lazy val commonSettings = Seq(
-  scalaVersion := "2.12.2",
+  scalaVersion := "2.12.7",
   organization := "com.emarsys",
   name := "gcs-storage-stream",
-  version := "1.1.0"
+  version := "1.1.1"
 )
 
 lazy val IntegrationTest = config("it") extend Test
@@ -13,12 +13,12 @@ lazy val root = (project in file(".")).
   settings(
 
 libraryDependencies ++= {
-val akkaVersion = "2.5.0"
+val akkaVersion = "2.5.17"
 Seq(
   "com.typesafe.akka" %% "akka-stream"                  % akkaVersion,
   "com.typesafe.akka" %% "akka-actor"                   % akkaVersion,
   "org.scalatest"     %% "scalatest"                    % "3.0.1" % "it,test",
-  "com.google.cloud"  %   "google-cloud-storage"        % "0.13.0-beta"
+  "com.google.cloud"  %   "google-cloud-storage"        % "1.49.0"
  )
 }
 
